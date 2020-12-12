@@ -30,6 +30,10 @@ namespace ZhangShashaCSharp
 
 			var (distance1, list1) = Tree.ZhangShasha(tree1, tree2);
 			System.Console.WriteLine("Expected 2; got " + distance1);
+			foreach (var o in list1)
+			{
+				System.Console.WriteLine(o.O.ToString() + " " + o.N1);
+			}
 
 			var (distance2, list2) = Tree.ZhangShasha(tree3, tree4);
 			System.Console.WriteLine("Expected 1; got " + distance2);

@@ -10,7 +10,6 @@ namespace ZhangShashaCSharp
     {
         public enum Op { Insert, Delete, Change };
         public Op O;
-        public Node N1;
-        public Node N2;
+        public int N1;
     }
 }

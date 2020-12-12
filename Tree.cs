@@ -182,13 +182,13 @@ namespace ZhangShashaCSharp
 			{
 				forestdist[i1, 0] = forestdist[i1 - 1, 0] + Delete;
 				foperations[i1, 0] = new List<Operation>(foperations[i1 - 1, 0]);
-				foperations[i1, 0].Add(new Operation() { O = Operation.Op.Delete });
+				foperations[i1, 0].Add(new Operation() { O = Operation.Op.Delete, N1 = i1 });
 			}
 			for (int j1 = l2[j - 1]; j1 <= j; j1++)
 			{
 				forestdist[0, j1] = forestdist[0, j1 - 1] + Insert;
 				foperations[0, j1] = new List<Operation>(foperations[0, j1 - 1]);
-				foperations[0, j1].Add(new Operation() { O = Operation.Op.Insert });
+				foperations[0, j1].Add(new Operation() { O = Operation.Op.Insert, N1 = j1 });
 			}
 			for (int i1 = l1[i - 1]; i1 <= i; i1++)
 			{
@@ -206,14 +206,14 @@ namespace ZhangShashaCSharp
                         {
 							test1 = forestdist[i1, j_temp] + Insert;
 							list1 = new List<Operation>(foperations[i1, j_temp]);
-							list1.Add(new Operation() { O = Operation.Op.Insert });
+							list1.Add(new Operation() { O = Operation.Op.Insert, N1 = j_temp + 1 });
 							if (list1.Count != test1) throw new Exception();
 						}
 						else
                         {
 							test1 = forestdist[i_temp, j1] + Delete;
 							list1 = new List<Operation>(foperations[i_temp, j1]);
-							list1.Add(new Operation() { O = Operation.Op.Delete });
+							list1.Add(new Operation() { O = Operation.Op.Delete, N1 = i_temp + 1 });
 							if (list1.Count != test1) throw new Exception();
 						}
 
@@ -260,14 +260,14 @@ namespace ZhangShashaCSharp
 						{
 							test1 = forestdist[i1, j_temp] + Insert;
 							list1 = new List<Operation>(foperations[i1, j_temp]);
-							list1.Add(new Operation() { O = Operation.Op.Insert });
+							list1.Add(new Operation() { O = Operation.Op.Insert, N1 = j_temp + 1 });
 							if (list1.Count != test1) throw new Exception();
 						}
 						else
 						{
 							test1 = forestdist[i_temp, j1] + Delete;
 							list1 = new List<Operation>(foperations[i_temp, j1]);
-							list1.Add(new Operation() { O = Operation.Op.Delete });
+							list1.Add(new Operation() { O = Operation.Op.Delete, N1 = i_temp + 1 });
 							if (list1.Count != test1) throw new Exception();
 						}
 
