@@ -11,5 +11,6 @@ namespace ZhangShashaCSharp
         public enum Op { Insert, Delete, Change };
         public Op O;
         public int N1;
+        public int N2;
     }
 }
