@@ -44,6 +44,10 @@ namespace ZhangShashaCSharp
 
 			var (distance3, list3) = Tree.ZhangShasha(tree5, tree6);
 			System.Console.WriteLine("Expected 2; got " + distance3);
-        }
-    }
+			foreach (var o in list3)
+			{
+				System.Console.WriteLine(o.O.ToString() + " " + o.N1 + " => " + o.N2);
+			}
+		}
+	}
 }
