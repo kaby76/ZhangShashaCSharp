@@ -145,14 +145,14 @@ namespace ZhangShashaCSharp
 			// space complexity of the algorithm
 			tree_distance = new int[l1.Count + 1, l2.Count + 1];
 			tree_operations = new List<Operation>[l1.Count + 1, l2.Count + 1];
-			for (int m = 0; m < l1.Count + 1; ++m)
-				for (int n = 0; n < l2.Count + 1; ++n)
+			for (int m = 0; m <= l1.Count; ++m)
+				for (int n = 0; n <= l2.Count; ++n)
 					tree_operations[m, n] = new List<Operation>();
 
 			// solve subproblems
-			for (int i1 = 1; i1 < keyroots1.Count + 1; i1++)
+			for (int i1 = 1; i1 <= keyroots1.Count; i1++)
 			{
-				for (int j1 = 1; j1 < keyroots2.Count + 1; j1++)
+				for (int j1 = 1; j1 <= keyroots2.Count; j1++)
 				{
 					int i = keyroots1[i1 - 1];
 					int j = keyroots2[j1 - 1];
